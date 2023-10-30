@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 # Database of questions
 class Question(models.Model):
+    """This class makes a database called question:
+    """
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     
