@@ -30,6 +30,13 @@ def detail(request, question_id):
 # Giving the vote of the question
 @login_required
 def vote(request, question_id):
+    '''To vote on that specific question:
+    
+        :parem request: Request from the user
+        :parem question ID : This is the question's ID
+        
+        :returns: To either the display website if the user didn't choose or to the result website
+    '''
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(
