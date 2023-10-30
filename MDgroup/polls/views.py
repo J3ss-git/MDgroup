@@ -18,6 +18,13 @@ def index(request):
 
 # Giving detail of the question
 def detail(request, question_id):
+    '''Going to the detail website of each individual question:
+
+        :parem request: The request of the user
+        :parem question ID: This is the ID of the question
+        
+        :returns: Takes user to that individual question to the detail website
+    '''
     return render(request, "polls/detail.html",{"question":Question.objects.get(pk=question_id)})
 
 # Giving the vote of the question
