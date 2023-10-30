@@ -6,6 +6,12 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
+    '''This function will show the latest question list of the poll website:
+    
+        :parem request: This will take the request from the user
+        
+        :returns: Takes user to polls website
+    '''
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     return render(request, "polls/poll.html",context)
