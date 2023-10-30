@@ -58,5 +58,12 @@ def vote(request, question_id):
         
 # This will represents the final page display      
 def results(request, question_id):
+    '''The results of the voting of that individual question:
+
+        :parem request: The request of the user
+        :parem Question ID: This is the ID of the question
+        
+        :returns: To reults page of the question
+    '''
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
